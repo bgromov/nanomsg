@@ -46,6 +46,7 @@
 #include "../transports/inproc/inproc.h"
 #include "../transports/ipc/ipc.h"
 #include "../transports/tcp/tcp.h"
+#include "../transports/rtipc/rtipc.h"
 
 #include "../protocols/pair/pair.h"
 #include "../protocols/pair/xpair.h"
@@ -247,6 +248,7 @@ static void nn_global_init (void)
     nn_global_add_transport (nn_inproc);
 #if !defined NN_HAVE_WINDOWS
     nn_global_add_transport (nn_ipc);
+    nn_global_add_transport (nn_rtipc);
 #endif
     nn_global_add_transport (nn_tcp);
 

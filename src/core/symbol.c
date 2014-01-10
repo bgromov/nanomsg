@@ -26,6 +26,7 @@
 #include "../inproc.h"
 #include "../ipc.h"
 #include "../tcp.h"
+#include "../rtipc.h"
 
 #include "../pair.h"
 #include "../pubsub.h"

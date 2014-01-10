@@ -74,6 +74,7 @@ SEE ALSO
 --------
 linknanomsg:nn_inproc[7]
 linknanomsg:nn_ipc[7]
+linknanomsg:nn_rtipc[7]
 linknanomsg:nn_tcp[7]
 linknanomsg:nn_socket[3]
 linknanomsg:nn_bind[3]

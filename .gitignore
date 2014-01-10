@@ -63,6 +63,8 @@ tests/inproc_shutdown
 tests/iovec
 tests/ipc
 tests/ipc_shutdown
+tests/rtipc
+tests/rtipc_shutdown
 tests/list
 tests/msg
 tests/pair

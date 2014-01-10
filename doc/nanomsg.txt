@@ -105,6 +105,9 @@ In-process transport::
 Inter-process transport::
     linknanomsg:nn_ipc[7]
 
+Real-Time Inter-process transport::
+    linknanomsg:nn_rtipc[7]
+
 TCP transport::
     linknanomsg:nn_tcp[7]
 

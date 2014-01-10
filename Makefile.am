@@ -33,6 +33,7 @@ nninclude_HEADERS = \
     src/nn.h \
     src/inproc.h \
     src/ipc.h \
+    src/rtipc.h \
     src/tcp.h \
     src/pair.h \
     src/pubsub.h \
@@ -224,6 +225,7 @@ NANOMSG_PROTOCOLS = \
     $(PROTOCOLS_UTILS) \
     $(PROTOCOLS_INPROC) \
     $(PROTOCOLS_IPC) \
+    $(PROTOCOLS_RTIPC) \
     $(PROTOCOLS_TCP)
 
 
@@ -271,6 +273,18 @@ TRANSPORTS_IPC = \
     src/transports/ipc/sipc.h \
     src/transports/ipc/sipc.c
 
+TRANSPORTS_RTIPC = \
+    src/transports/rtipc/artipc.h \
+    src/transports/rtipc/artipc.c \
+    src/transports/rtipc/brtipc.h \
+    src/transports/rtipc/brtipc.c \
+    src/transports/rtipc/crtipc.h \
+    src/transports/rtipc/crtipc.c \
+    src/transports/rtipc/rtipc.h \
+    src/transports/rtipc/rtipc.c \
+    src/transports/rtipc/srtipc.h \
+    src/transports/rtipc/srtipc.c
+
 TRANSPORTS_TCP = \
     src/transports/tcp/atcp.h \
     src/transports/tcp/atcp.c \
@@ -287,6 +301,7 @@ NANOMSG_TRANSPORTS = \
     $(TRANSPORTS_UTILS) \
     $(TRANSPORTS_INPROC) \
     $(TRANSPORTS_IPC) \
+    $(TRANSPORTS_RTIPC) \
     $(TRANSPORTS_TCP)
 
 libnanomsg_la_SOURCES = \
@@ -319,6 +334,7 @@ MAN7 = \
     doc/nn_bus.txt \
     doc/nn_inproc.txt \
     doc/nn_ipc.txt \
+    doc/nn_rtipc.txt \
     doc/nn_tcp.txt \
     doc/nn_env.txt
 
@@ -426,6 +442,8 @@ TRANSPORT_TESTS = \
     tests/inproc_shutdown \
     tests/ipc \
     tests/ipc_shutdown \
+    tests/rtipc \
+    tests/rtipc_shutdown \
     tests/tcp \
     tests/tcp_shutdown
 

@@ -29,6 +29,7 @@ set (NN_SOURCES
     nn.h
     inproc.h
     ipc.h
+    rtipc.h
     tcp.h
     pair.h
     pubsub.h
@@ -246,6 +247,17 @@ set (NN_SOURCES
     transports/tcp/stcp.c
     transports/tcp/tcp.h
     transports/tcp/tcp.c
+
+    transports/rtipc/artipc.h
+    transports/rtipc/artipc.c
+    transports/rtipc/brtipc.h
+    transports/rtipc/brtipc.c
+    transports/rtipc/crtipc.h
+    transports/rtipc/crtipc.c
+    transports/rtipc/rtipc.h
+    transports/rtipc/rtipc.c
+    transports/rtipc/srtipc.h
+    transports/rtipc/srtipc.c
 )
 
 add_library (nanomsg SHARED ${NN_SOURCES})

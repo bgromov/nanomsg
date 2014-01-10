@@ -87,6 +87,10 @@ Socket Options:
     Bind socket to the ipc address "ipc://PATH".
  *--connect-ipc,-x* 'PATH'::
     Connect socket to the ipc address "ipc://PATH".
+ *--bind-rtipc,-X* 'PATH'::
+    Bind socket to the ipc address "rtipc://PATH".
+ *--connect-rtipc,-x* 'PATH'::
+    Connect socket to the rtipc address "rtipc://PATH".
  *--bind-local,-L* 'PORT'::
     Bind socket to the tcp address "tcp://127.0.0.1:PORT".
  *--connect-local,-l* 'PORT'::

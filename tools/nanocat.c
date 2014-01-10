@@ -205,6 +205,16 @@ struct nn_option nn_options[] = {
      NN_MASK_ENDPOINT, NN_NO_CONFLICTS, NN_NO_REQUIRES,
      "Socket Options", "PATH", "Connect socket to the ipc address "
                                "\"ipc://PATH\"."},
+    {"bind-rtipc", 'X' , NULL, NN_OPT_LIST_APPEND_FMT,
+     offsetof (nn_options_t, bind_addresses), "rtipc://%s",
+     NN_MASK_ENDPOINT, NN_NO_CONFLICTS, NN_NO_REQUIRES,
+     "Socket Options", "PATH", "Bind socket to the rtipc address "
+                               "\"rtipc://PATH\"."},
+    {"connect-rtipc", 'x' , NULL, NN_OPT_LIST_APPEND_FMT,
+     offsetof (nn_options_t, connect_addresses), "rtipc://%s",
+     NN_MASK_ENDPOINT, NN_NO_CONFLICTS, NN_NO_REQUIRES,
+     "Socket Options", "PATH", "Connect socket to the rtipc address "
+                               "\"rtipc://PATH\"."},
     {"bind-local", 'L' , NULL, NN_OPT_LIST_APPEND_FMT,
      offsetof (nn_options_t, bind_addresses), "tcp://127.0.0.1:%s",
      NN_MASK_ENDPOINT, NN_NO_CONFLICTS, NN_NO_REQUIRES,

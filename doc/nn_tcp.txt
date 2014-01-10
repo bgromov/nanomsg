@@ -68,6 +68,7 @@ SEE ALSO
 --------
 linknanomsg:nn_inproc[7]
 linknanomsg:nn_ipc[7]
+linknanomsg:nn_rtipc[7]
 linknanomsg:nn_bind[3]
 linknanomsg:nn_connect[3]
 linknanomsg:nanomsg[7]

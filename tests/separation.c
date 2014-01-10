@@ -26,11 +26,13 @@
 #include "../src/pipeline.h"
 #include "../src/inproc.h"
 #include "../src/ipc.h"
+#include "../src/rtipc.h"
 #include "../src/tcp.h"
 #include "testutil.h"
 
 #define SOCKET_ADDRESS_INPROC "inproc://a"
 #define SOCKET_ADDRESS_IPC "ipc://test-separation.ipc"
+#define SOCKET_ADDRESS_RTIPC "rtipc://test-separation.rtipc"
 #define SOCKET_ADDRESS_TCP "tcp://127.0.0.1:5556"
 
 /*  This test checks whether the library prevents interconnecting sockets
@@ -76,6 +78,19 @@ int main ()
     test_bind (pair, SOCKET_ADDRESS_IPC);
     pull = test_socket (AF_SP, NN_PULL);
     test_connect (pull, SOCKET_ADDRESS_IPC);
+    timeo = 100;
+    rc = nn_setsockopt (pair, NN_SOL_SOCKET, NN_SNDTIMEO,
+        &timeo, sizeof (timeo));
+    rc = nn_send (pair, "ABC", 3, 0);
+    errno_assert (rc < 0 && nn_errno () == EAGAIN);
+    test_close (pull);
+    test_close (pair);
+
+    /*  RTIPC */
+    pair = test_socket (AF_SP, NN_PAIR);
+    test_bind (pair, SOCKET_ADDRESS_RTIPC);
+    pull = test_socket (AF_SP, NN_PULL);
+    test_connect (pull, SOCKET_ADDRESS_RTIPC);
     timeo = 100;
     rc = nn_setsockopt (pair, NN_SOL_SOCKET, NN_SNDTIMEO,
         &timeo, sizeof (timeo));
